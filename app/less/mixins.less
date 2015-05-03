@@ -1,0 +1,137 @@
+/* --------- Fonts --------- */
+
+@import "fonts";
+
+/* MIXINS */
+
+.inlineblock {
+    display: inline !ie;
+	display: inline-block;
+	vertical-align: top;
+	zoom: 1 !ie;
+}
+
+.clearfix {
+    *zoom: ~"expression(this.runtimeStyle.zoom='1', this.appendChild(document.createElement('br')).style.cssText='clear:both;font:0/0 serif')";
+    zoom: 1 !ie;
+    
+    &:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+	
+	&:after {
+		clear: both;
+	}
+}
+
+.border-radius (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius:    @radius;
+	border-radius:         @radius;
+
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+}
+
+.box-shadow (@string) {
+	-webkit-box-shadow: @string;
+	-moz-box-shadow:    @string;
+	box-shadow:         @string;
+}
+
+.box-shadowIE (@x: 5px,@y: 5px,@color: #000000) {
+    filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=@x, OffY=@y, Color=@color);
+}
+
+.gradientie8(@startColor, @endColor) {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@startColor, endColorstr=@endColor, GradientType=1);
+}
+
+.transition (@transition) {
+	-webkit-transition: @transition;
+	-moz-transition:    @transition;
+	-ms-transition:     @transition;
+	-o-transition:      @transition;
+	transition:      @transition;
+}
+
+.opacity(@opacity: 1) {
+	@ieOpacity: @opacity * 100;
+	filter: ~"alpha(opacity=@{ieOpacity})";
+	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{ieOpacity})";
+	opacity: @opacity;
+}
+
+
+.placecolor(@color: #000000) {
+    &::-webkit-input-placeholder {
+        color: @color;
+    }
+    &:-moz-placeholder {
+        color: @color;
+    }
+    &::-moz-placeholder {
+        color: @color;
+    }
+    &:-ms-input-placeholder {
+        color: @color;
+    }
+}
+
+.button (@width, @height, @img-height, @img-width ,@img, @x, @y, @color) {
+    position: relative;
+    width: @width;
+    height: @height;
+    text-align: center;
+    .border-radius (50px);
+    border: 1px solid #ededed;
+    background: transparent;
+    .inlineblock;
+    padding: 0;
+    outline: none;
+    .transition(.2s);
+    line-height: @height;
+    .mont-b;
+    font-size: 10px;
+    color: @color;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &:before {
+        position: absolute;
+        top: 8px;
+        left: 18px;
+        content: "";
+        width: @img-width;
+        height: @img-height;
+        .inlineblock;
+        background: @img @x @y no-repeat;
+    }
+
+    &:hover {
+        opacity: .9;
+    }
+
+    .btn__text {
+        .inlineblock;
+        margin-left: 15px;
+    }
+
+}
+
+.button (@width, @height, @img-height, @img-width ,@img, @x, @y, @color) when (@img = none) {
+    border: 1px solid rgba(237,237,237,.2);
+
+    &:before {
+        display: none;
+    }
+
+    .btn__text {
+        .inlineblock;
+        margin-left: 0;
+    }
+}

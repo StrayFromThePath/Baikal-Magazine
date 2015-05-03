@@ -1,0 +1,220 @@
+/* --------- Fonts --------- */
+
+@import "fonts";
+
+/* --------- Mixins -------- */
+
+@import "mixins";
+
+/* --------- Base ---------- */
+
+@import "adjustment";
+
+/* --------- Header ---------*/
+
+@import "header";
+
+/*---------- Slider ---------*/
+
+@import "slider";
+
+/*---------- Content ---------*/
+
+.content {
+    background-color: #eee;
+    padding-top: 40px;
+}
+
+.news__list {
+    .clearfix;
+    margin-left: -20px;
+}
+
+.news__item {
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    .border-radius(5px);
+}
+
+.news__link {
+    display: block;
+    width: 230px;
+    min-height: 300px;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.news__link-lg {
+    .clearfix;
+    width: 480px;
+    max-height: 300px;
+    position: relative;
+    padding-left: 27px;
+    cursor: pointer;
+}
+
+.news__link-card {
+    width: 230px;
+    min-height: 300px;
+    padding: 30px;
+    text-align: center;
+    .border-radius(5px);
+    cursor: pointer;
+
+    &-science {
+        background-color: #0080b9;
+    }
+
+    &-travel {
+         background-color: #674ed6;
+    }
+
+    &-nature {
+        background-color: #3aa773;
+    }
+
+    &-explorers {
+        background-color: #d8a252;
+    }
+
+    &-advices {
+        background-color: #e98fff;
+    }
+}
+
+.news__title-card {
+    margin-bottom: 15px;
+
+    h2 {
+        margin: 0;
+        .mont-b;
+        font-size: 22px;
+        color: #fff;
+        line-height: 1.2;
+    }
+}
+
+.news__description-card {
+    height: 84px;
+    overflow: hidden;
+
+    p {
+        margin: 0;
+        .pt-r;
+        font-size: 14px;
+        color: #fff;
+        .opacity(.5);
+    }
+}
+
+.news__link-tag {
+    margin-bottom: 25px;
+    .mont-b;
+    font-size: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.news__text-wrap--lg {
+    width: 245px;
+    float: left;
+    padding-top: 65px;
+    padding-bottom: 31px;
+}
+
+.news__pic-lg {
+    float: right;
+    margin-top: 40px;
+    margin-right: 5px;
+}
+
+.news__text-wrap {
+    padding: 0 18px;
+}
+
+.news__title {
+    h2 {
+        .mont-b;
+        font-size: 15px;
+        color: #3a3d3f;
+    }
+}
+
+.news__title-lg {
+    margin-bottom: 15px;
+    h2 {
+        margin: 0;
+        .mont-b;
+        font-size: 22px;
+        color: #3c3d41;
+        line-height: 1.2;
+    }
+}
+
+.news__description {
+    p {
+        .pt-r;
+        font-size: 14px;
+        color: #838d8f;
+    }
+}
+
+.news__description-lg {
+    margin-bottom: 30px;
+
+    p {
+        .pt-r;
+        font-size: 14px;
+        color: #838d8f;
+    }
+}
+
+.news__tag {
+    position: absolute;
+    top: 20px;
+    left: 22px;
+    .inlineblock;
+    .mont-b;
+    font-size: 10px;
+    color: #fff;
+    padding: 3px 5px;
+    text-transform: uppercase;
+    .border-radius(5px);
+    letter-spacing: 1px;
+
+    &-travel {
+        background-color: #6741dc;
+    }
+
+    &-explorers {
+        background-color: #d8a252;
+    }
+
+    &-nature {
+        background-color: #41a674;
+    }
+
+    &-science {
+        background-color: #0080b9;
+    }
+
+    &-advices {
+        background-color: #e98fff;
+    }
+}
+
+.news__tag-lg {
+    top: 27px;
+    left: 27px;
+}
+
+.news__btn {
+    .button (185px, 35px, 16px, 22px ,url('../img/sprite.png'), -24px, 0, #3c3d41);
+}
+
+.news__btn-card {
+    .button (135px, 35px, 0, 0, none, 0, 0, #fff);
+}
